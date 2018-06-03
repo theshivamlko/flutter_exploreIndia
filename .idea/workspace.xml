@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f0d6a87c-c3da-4019-a9c1-f2b20f0727fb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" afterPath="$PROJECT_DIR$/lib/main.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -297,6 +296,14 @@
       <option name="presentableId" value="Default" />
       <updated>1527794724763</updated>
     </task>
+    <task id="LOCAL-00001" summary="# progressDialog">
+      <created>1528056582996</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528056582996</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -347,6 +354,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="# progressDialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="# progressDialog" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
