@@ -1,0 +1,142 @@
+{
+  "project_info": {
+    "project_number": "218004930754",
+    "firebase_url": "https://innovative-43c75.firebaseio.com",
+    "project_id": "innovative-43c75",
+    "storage_bucket": "innovative-43c75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218004930754:android:2ed93b32f1442fbf",
+        "android_client_info": {
+          "package_name": "com.navoki.exploreindia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218004930754-2iijsfifp58k4efu0mn6vq9oujqk4ag1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.navoki.exploreindia",
+            "certificate_hash": "e8ea43b149a0d2cc93731456b5a4fae19e668b73"
+          }
+        },
+        {
+          "client_id": "218004930754-1ha6nafc92tmedc9bkm1j8kfb0e6udgc.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "218004930754-1ha6nafc92tmedc9bkm1j8kfb0e6udgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_RG83MC-3uGKpupOkSnwEh-MNRY8ZZD4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218004930754-1ha6nafc92tmedc9bkm1j8kfb0e6udgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218004930754:android:3de10ddddc1db203",
+        "android_client_info": {
+          "package_name": "com.shivam.livewallpaper.galaxytravel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218004930754-0ktrrhp7kt8pcdis24ofdt08ng3vv1je.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shivam.livewallpaper.galaxytravel",
+            "certificate_hash": "4d3e76bfe4589443cbe0636ec4980cd6abd284e4"
+          }
+        },
+        {
+          "client_id": "218004930754-1ha6nafc92tmedc9bkm1j8kfb0e6udgc.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "218004930754-1ha6nafc92tmedc9bkm1j8kfb0e6udgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_RG83MC-3uGKpupOkSnwEh-MNRY8ZZD4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218004930754-1ha6nafc92tmedc9bkm1j8kfb0e6udgc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218004930754:android:af2af826b0df8b5c",
+        "android_client_info": {
+          "package_name": "com.shivam.media.imagic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218004930754-1ha6nafc92tmedc9bkm1j8kfb0e6udgc.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "218004930754-1ha6nafc92tmedc9bkm1j8kfb0e6udgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_RG83MC-3uGKpupOkSnwEh-MNRY8ZZD4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
