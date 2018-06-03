@@ -35,26 +35,30 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   Animation<double> animationFadeIn;
   Animation<double> animationFadeInInput;
   Animation<double> animationMoveUp;
-  AnimationController controller, controller2, controller3;
+  Animation<double> animationRotate;
+  AnimationController controller, controller2, controller3, controller4;
   TextEditingController usernameController = new TextEditingController();
   TextEditingController passController = new TextEditingController();
 
   var height = 300.0;
   var width = 300.0;
   var spacing = 350.0;
+  var progressDialog;
+  bool isProgressDialog = false;
 
   @override
   void initState() {
     super.initState();
 
-    initAnimation();
+    initData();
 
     controller.forward();
+    controller4.repeat();
 
     controller.addListener(() {
       setState(() {
-        print('-------');
-        print(animationFadeIn.status);
+        //   print('-------');
+        // print(animationFadeIn.status);
         if (animationFadeIn.status == AnimationStatus.completed) {
           controller2.forward();
           new Timer(
@@ -65,8 +69,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
     controller2.addListener(() {
       setState(() {
-        print('controller2-------');
-        print(animationMoveUp.status);
+        // print('controller2-------');
+        //   print(animationMoveUp.status);
         if (animationMoveUp.status == AnimationStatus.forward) {
           height = animationScaleDown.value;
           width = height;
@@ -75,12 +79,22 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         } else if (animationMoveUp.status == AnimationStatus.completed) {}
       });
     });
+
+    controller4.addListener(() {
+      setState(() {
+        //   print('controller4-----####');
+        if (animationRotate.status == AnimationStatus.completed) {
+          controller4.forward();
+        }
+      });
+    });
   }
 
   @override
   void setState(VoidCallback fn) {
     super.setState(fn);
-    print('setState######');
+    //  print('setState######');
+    //  print(animationRotate.value/360);
   }
 
   @override
@@ -218,6 +232,33 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                         ),
                       )),
                 ),
+                !isProgressDialog
+                    ? new Container()
+                    : new Container(
+                        alignment: Alignment.center,
+                        color: new Color.fromARGB(150, 0, 0, 0),
+                        child: new Stack(
+                            alignment: Alignment.center,
+                            children: <Widget>[
+                              new Transform(
+                                  alignment: FractionalOffset.center,
+                                  transform: new Matrix4.rotationZ(
+                                      -animationRotate.value / 360),
+                                  child: new Image.asset(
+                                    'images/ring_design.png',
+                                    height: 150.0,
+                                    width: 150.0,
+                                  )),
+                              new Container(
+                                  margin: const EdgeInsets.only(top: 250.0),
+                                  child: Text(
+                                    'Signing in...',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 40.0,
+                                        fontFamily: 'samarn'),
+                                  ))
+                            ]))
               ])),
         ]
                 // This trailing comma makes auto-formatting nicer for build methods.
@@ -235,16 +276,23 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   getSignIn(String user, String pass) async {
     print(pass);
+    setState(() {
+      isProgressDialog = true;
+    });
     await firebaseAuth
         .signInWithEmailAndPassword(email: user, password: pass)
         .then((FirebaseUser user) {
       print('****${user.isEmailVerified}');
-      showMyDialog('Successfully signed in');
 
+      showMyDialog('Successfully signed in');
     }).catchError((e) => showMyDialog('${e}'));
   }
 
   void showMyDialog(String msg) {
+    setState(() {
+      isProgressDialog = false;
+    });
+
     var alert = new AlertDialog(
       content: new Stack(
         children: <Widget>[
@@ -281,7 +329,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         });
   }
 
-  void initAnimation() {
+  void initData() {
     controller = new AnimationController(
         duration: const Duration(milliseconds: 3000), vsync: this);
     animationFadeIn = new Tween(begin: 0.0, end: 1.0).animate(controller);
@@ -297,5 +345,20 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     controller3 = new AnimationController(
         duration: const Duration(milliseconds: 500), vsync: this);
     animationFadeInInput = new Tween(begin: 0.0, end: 1.0).animate(controller3);
+
+    controller4 = new AnimationController(
+        duration: new Duration(milliseconds: 700), vsync: this);
+    animationRotate = new Tween(begin: 0.0, end: 360.0).animate(controller4);
+
+    /*progressDialog = new AlertDialog(
+      content: new Container(
+        color: Colors.red,
+        child: new Image.asset(
+          'images/ring_design.png',
+          height: 100.0,
+          width: 100.0,
+        ),
+      ),
+    );*/
   }
 }
